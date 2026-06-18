@@ -132,16 +132,15 @@ a:hover {
 .logo {
   position: absolute;
   z-index: 5;
-  top: 0px;
+  top: 20px;
   left: 0px;
   font-family: "Wow";
   color: rgb(87, 210, 219);
   text-align: center;
 }
 
-.logo img{
-  width: 50%;
-
+.logo img {
+  width: 30%;
 }
 
 nav {
@@ -206,7 +205,71 @@ li a:hover {
 }
 
 @media only screen and (max-width: 600px) {
+  html,
+  body {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .panels {
+    flex-direction: column;
+    transform: none;
+    margin: 0;
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .panel {
+    flex: 1 1 0;
+    width: 100%;
+    min-height: 0;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    filter: none;
+    transition: flex 0.4s ease;
+  }
+
+  .panel.open-active {
+    flex: 4;
+    font-size: 1.4em;
+  }
+
+  .panel.open-active > *:first-child {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .panel.open-active > *:nth-child(n + 2) {
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+
   .panel p {
     font-size: 1em;
+  }
+
+  nav {
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  ul {
+    margin-right: 0;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .iconos {
+    display: flex;
+    bottom: 0;
+    right: 6vh;
+    margin-bottom: 20px;
   }
 }
