@@ -1,0 +1,212 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.panels {
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  transform: skewX(-10deg);
+  position: relative;
+}
+
+.panel {
+  background: #6b0f9c;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.1);
+  color: white;
+  text-align: center;
+  align-items: center;
+  transition:
+    font-size 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    flex 0.7s cubic-bezier(0.61, -0.19, 0.7, -0.11),
+    background 0.2s;
+  font-size: 20px;
+  background-size: cover;
+  background-position: center;
+  flex: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  transition: flex 1.5s ease;
+}
+
+.panel1 {
+  background-image: url(./assets/164072-mundo_de_warcraft_shadowlands-clasico_de_world_of_warcraft-la_blizzcon-blizzard_entertainment-pack_de_expansion-5120x2492.jpg);
+  background-position: center center;
+  background-size: cover;
+  filter: grayscale(100%);
+
+  opacity: 1;
+  transform: scale(1);
+}
+.panel2 {
+  background-image: url(./assets/jhoP8OT.jpeg);
+  background-position: right top;
+  background-size: auto;
+  filter: grayscale(100%);
+}
+.panel3 {
+  background-image: url(./assets/9yourMm.jpeg);
+  background-position: right top;
+  background-size: auto;
+  filter: grayscale(100%);
+}
+
+.panel > * {
+  margin: 0;
+  width: 100%;
+  transition:
+    transform 0.5s,
+    opacity 0.5s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.panel > *:first-child {
+  transform: translateY(0);
+  font-size: 2rem;
+}
+.panel:hover > *:first-child {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.panel > *:nth-child(n + 2) {
+  transform: translateY(100%);
+  visibility: hidden;
+  opacity: 0;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  margin-bottom: 20px;
+}
+
+.panel:hover > *:nth-child(n + 2) {
+  transform: translateY(0);
+  visibility: visible;
+  justify-content: center;
+  opacity: 1;
+  font-size: 1rem;
+  filter: grayscale(0%);
+}
+
+.panel p {
+  text-transform: uppercase;
+  font-family: "Wow", cursive;
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.72),
+    0 0 14px rgba(0, 0, 0, 0.45);
+}
+
+.panel:hover {
+  flex: 4;
+  font-size: 40px;
+  visibility: visible;
+}
+
+.panels {
+  margin-left: -80px;
+  margin-right: -80px;
+}
+
+a {
+  text-decoration: none;
+  color: bisque;
+}
+
+a:hover {
+  color: chartreuse;
+  text-decoration: double;
+}
+
+.logo {
+  position: absolute;
+  z-index: 5;
+  top: 0px;
+  left: 0px;
+  font-family: "Wow";
+  color: rgb(87, 210, 219);
+  text-align: center;
+}
+
+.logo img{
+  width: 50%;
+
+}
+
+nav {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  justify-content: right;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  gap: 40px;
+  text-decoration: none;
+  margin-right: 40px;
+}
+
+li {
+  list-style-type: none;
+  font-family: "arial";
+}
+
+.panel1:hover {
+  filter: none;
+}
+
+.panel2:hover {
+  filter: none;
+}
+
+.panel3:hover {
+  filter: none;
+}
+
+.iconos {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  right: 0;
+  width: 10%;
+  margin-bottom: 20px;
+}
+
+.icono1 {
+  width: 30px;
+  opacity: 50%;
+}
+
+.icono2 {
+  width: 60px;
+  opacity: 50%;
+}
+
+li a {
+  color: white;
+}
+
+li a:hover {
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .panel p {
+    font-size: 1em;
+  }
+}
